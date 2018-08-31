@@ -1,17 +1,15 @@
 var buttonClick = document.querySelector("#button1");
+var textArea = document.querySelector(".text");
+var myul = document.querySelector(".add");
 
 
 function newItem() {
-
-    var textArea = document.querySelector(".text").value;
-    var myul = document.querySelector(".add");
+    var input = document.createTextNode(textArea.value);
     var newli = document.createElement("li");
-    var input = document.createTextNode(textArea);
     var button = document.createElement("BUTTON");
     var but = document.createTextNode("X");
 
-
-    if (textArea === "") {
+    if (textArea.value === "") {
         alert("You have to write something");
     } else {
         button.appendChild(but);
@@ -19,21 +17,23 @@ function newItem() {
         newli.append(button);
         myul.appendChild(newli);
 
-
         document.querySelector(".text").value = "";
 
         newli.addEventListener("click", function() {
-            newli.style.textDecoration = "line-through";
+            if (newli.style.textDecoration == "none") {
+                newli.style.textDecoration = "line-through";
+            } else {
+                newli.style.textDecoration = "none";
+            }
+
         })
-        button.onclick = removeItem;
+
+        button.addEventListener("click", function() {
+            button.parentNode.remove();
+        })
     }
 
 }
 buttonClick.addEventListener("click", function() {
     newItem();
 })
-
-function removeItem(e) {
-    e.target.parentElement.removeChild(e.newli);
-
-}
