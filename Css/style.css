@@ -1,0 +1,38 @@
+.container {
+    margin: 0 auto;
+    max-width: 60rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.text {
+    margin-left: 12rem;
+    margin-top: 2.5rem;
+    font-size: 1.3rem;
+}
+
+#button1 {
+    background-color: gray;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 3rem;
+    margin-left: 5rem;
+    border: none;
+    float: right;
+    margin-top: 3rem;
+}
+
+.row {
+    display: inline-block;
+    margin-left: 2rem;
+}
+
+.add {
+    margin: 0 auto;
+    max-width: 32rem;
+    margin-top: 3rem;
+    font-size: 1.8rem;
+    margin-left: 26rem;
+}
